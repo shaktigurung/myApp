@@ -1,15 +1,19 @@
 import React from 'react';
-import TodoListItem from './TodoListItem';
+import {TodoListItem} from './TodoListItem.jsx';
 
-const TodoList = () =>{
- 
-    return(
-        <ul className="todos">
-            <TodoListItem value="1"/>
-            <TodoListItem value="2"/>
-            <TodoListItem value="3"/>
-            <TodoListItem value="4"/>
-       </ul>
+export class TodoList extends React.Component<any, any> {
+  render() {
+    const { filter, todos } = this.props;
+
+    const filteredTodos = Object.keys(todos).filter(id => {
+      return filter === 'all' || (filter === 'completed' && todos[id].completed) || (filter === 'active' && !todos[id].completed);
+    });
+    return (
+      <ul className="todos">
+        {filteredTodos.map(id => (
+          <TodoListItem key={id} id={id} {...todos[id]} />
+        ))}
+      </ul>
     );
+  }
 }
-export default TodoList;

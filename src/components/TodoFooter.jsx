@@ -1,12 +1,14 @@
 import React from 'react';
 
-const TodoFooter = () => {
-    return(
-        <footer>
-        <span><span className="remaining">4</span> items left</span>
-        <button className="submit"> Clear Completed </button>
-       </footer>
-    );
-}
-
+const TodoFooter = (props) => {
+  const itemCount = Object.keys(props.todos).filter(id => !props.todos[id].completed).length;
+  return (
+    <footer>
+      <span>
+        {itemCount} item{itemCount > 1 ? 's' : ''} left
+      </span>
+      <button className="submit">Clear Completed</button>
+    </footer>
+  );
+};
 export default TodoFooter;
