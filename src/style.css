@@ -1,0 +1,61 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 400px;
+    margin: 20px auto;
+  }
+  
+  Button {
+    display: block;
+    background: #0078d4;
+    color: white;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+  }
+  .Button:hover {
+    background: #005a9e;
+  }
+  
+  .Button:active {
+    background: #004578;
+  }
+
+  h1 {
+    text-align: center;
+  }
+  
+  .addTodo {
+    display: flex;
+  }
+  
+  .textfield {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+  
+  .submit {
+    border: none;
+    padding: 5px 10px;
+  }
+  
+  .filter {
+    display:flex;
+    margin: 10px 0 0;
+  }
+  
+ .filter .selected {
+    border-bottom: 2px solid red;
+  }
+  
+  .todos {
+    list-style: none;
+    padding: 0;
+  }
+  
+  footer {
+    display: flex;
+  }
+  
+  footer span {
+    flex-grow: 1;
+  }
